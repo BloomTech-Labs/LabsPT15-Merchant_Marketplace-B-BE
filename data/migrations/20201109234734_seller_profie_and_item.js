@@ -8,10 +8,6 @@ exports.up = function (knex) {
       tb.string('physical_address', 255);
       tb.text('description');
     })
-    .createTable('category', (tb) => {
-      tb.increments();
-      tb.string('category_name', 255);
-    })
     .createTable('tag', (tb) => {
       tb.increments();
       tb.string('tag_name', 255);
@@ -41,22 +37,6 @@ exports.up = function (knex) {
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
     })
-    .createTable('category_item', (tb) => {
-      tb.integer('item_id')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('item')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE');
-      tb.integer('category_id')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('category')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE');
-    })
     .createTable('tag_item', (tb) => {
       tb.integer('item_id')
         .unsigned()
@@ -78,10 +58,8 @@ exports.up = function (knex) {
 exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists('tag_item')
-    .dropTableIfExists('category_item')
     .dropTableIfExists('photo')
     .dropTableIfExists('item')
     .dropTableIfExists('tag')
-    .dropTableIfExists('category')
     .dropTableIfExists('seller_profile');
 };
