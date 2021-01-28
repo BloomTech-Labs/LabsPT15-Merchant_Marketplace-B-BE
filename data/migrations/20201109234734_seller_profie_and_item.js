@@ -1,12 +1,21 @@
 exports.up = function (knex) {
   return knex.schema
-    .createTable('seller_profile', (tb) => {
-      tb.string('id', 255).unique().notNullable().primary();
-      tb.string('seller_name', 255);
-      tb.string('email_address', 255);
-      tb.string('phone_number', 255);
-      tb.string('physical_address', 255);
+    .createTable('stores', (tb) => {
+      tb.string('id', 255).unique().notNullable().primary().increments();
+      tb.integer('owner_id', 255)
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('profiles')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
+      tb.string('name', 255).notNullable();
       tb.text('description');
+      tb.string('location', 255);
+      tb.integer('phone_number', 15);
+      tb.string('branding_image');
+      tb.string('operating_hours', 255);
+      tb.date('created_at');
     })
     .createTable('tag', (tb) => {
       tb.increments();
@@ -22,7 +31,7 @@ exports.up = function (knex) {
       tb.string('seller_profile_id')
         .notNullable()
         .references('id')
-        .inTable('seller_profile')
+        .inTable('profiles')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
     })
@@ -61,5 +70,5 @@ exports.down = function (knex) {
     .dropTableIfExists('photo')
     .dropTableIfExists('item')
     .dropTableIfExists('tag')
-    .dropTableIfExists('seller_profile');
+    .dropTableIfExists('stores');
 };
