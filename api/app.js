@@ -26,7 +26,6 @@ const itemsRouter = require('./items/itemsRouter');
 
 const tagRouter = require('./tag/tagRouter');
 const photoRouter = require('./photo/photoRouter');
-const categoryRouter = require('./category/categoryRouter');
 
 const app = express();
 
@@ -53,12 +52,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // application routes
-app.use('/', indexRouter);
-app.use(['/profile', '/profiles'], profileRouter);
-app.use(['/item', '/items'], itemsRouter);
-app.use(['/tag', '/tags'], tagRouter);
-app.use(['/photo', '/photos'], photoRouter);
-app.use(['/category', '/categories'], categoryRouter);
+app.use('/api', indexRouter);
+app.use(['/api/profile', '/api/profiles'], profileRouter);
+app.use(['/api/item', '/api/items'], itemsRouter);
+app.use(['/api/tag', '/api/tags'], tagRouter);
+app.use(['/api/photo', '/api/photos'], photoRouter);
 
 //catch 404 and forward to error handler
 app.use(function (req, res, next) {
