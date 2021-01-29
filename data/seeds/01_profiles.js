@@ -11,10 +11,10 @@ const profiles = [...new Array(5)].map((i, idx) => ({
       : idx.toString(),
   first_name: faker.name.firstName(),
   last_name: faker.name.lastName(),
-  email: idx === 0 ? 'llama001@maildrop.cc"' : faker.internet.email(),
+  email: idx === 0 ? 'llama001@maildrop.cc' : faker.internet.email(),
   created_at: faker.date.past(),
   location: faker.address.streetAddress(),
-  avatarUrl: faker.image.avatar(),
+  avatar_url: faker.image.avatar(),
   bio: '',
 }));
 

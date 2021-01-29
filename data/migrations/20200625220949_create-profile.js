@@ -7,7 +7,7 @@ exports.up = (knex) => {
       table.string('last_name');
       table.string('email').unique();
       table.string('location');
-      table.string('avatarUrl');
+      table.string('avatar_url');
       table.string('bio');
       table.timestamps(true, true);
     });
