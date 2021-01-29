@@ -18,7 +18,8 @@
     "api/**/*.js": [
       "eslint --fix",
       "prettier-eslint --write"
-    ]
+    ],
+    "*.js": "eslint --cache --fix"
   },
   "husky": {
     "hooks": {
