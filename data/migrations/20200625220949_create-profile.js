@@ -6,7 +6,6 @@ exports.up = (knex) => {
       table.string('first_name');
       table.string('last_name');
       table.string('email').unique();
-      table.date('created_at');
       table.string('location');
       table.string('avatarUrl');
       table.string('bio');

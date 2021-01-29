@@ -1,8 +1,8 @@
 exports.up = function (knex) {
   return knex.schema
     .createTable('stores', (tb) => {
-      tb.string('id', 255).unique().notNullable().primary().increments();
-      tb.integer('owner_id', 255)
+      tb.increments();
+      tb.string('owner_id', 255)
         .unsigned()
         .notNullable()
         .references('id')
@@ -12,7 +12,7 @@ exports.up = function (knex) {
       tb.string('name', 255).notNullable();
       tb.text('description');
       tb.string('location', 255);
-      tb.integer('phone_number', 15);
+      tb.string('phone_number');
       tb.string('branding_image');
       tb.string('operating_hours', 255);
       tb.date('created_at');
