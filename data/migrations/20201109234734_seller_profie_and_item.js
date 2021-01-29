@@ -1,16 +1,21 @@
 exports.up = function (knex) {
   return knex.schema
-    .createTable('seller_profile', (tb) => {
-      tb.string('id', 255).unique().notNullable().primary();
-      tb.string('seller_name', 255);
-      tb.string('email_address', 255);
-      tb.string('phone_number', 255);
-      tb.string('physical_address', 255);
-      tb.text('description');
-    })
-    .createTable('category', (tb) => {
+    .createTable('stores', (tb) => {
       tb.increments();
-      tb.string('category_name', 255);
+      tb.string('owner_id', 255)
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('profiles')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
+      tb.string('name', 255).notNullable();
+      tb.text('description');
+      tb.string('location', 255);
+      tb.string('phone_number');
+      tb.string('branding_image');
+      tb.string('operating_hours', 255);
+      tb.date('created_at');
     })
     .createTable('tag', (tb) => {
       tb.increments();
@@ -26,7 +31,7 @@ exports.up = function (knex) {
       tb.string('seller_profile_id')
         .notNullable()
         .references('id')
-        .inTable('seller_profile')
+        .inTable('profiles')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
     })
@@ -38,22 +43,6 @@ exports.up = function (knex) {
         .notNullable()
         .references('id')
         .inTable('item')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE');
-    })
-    .createTable('category_item', (tb) => {
-      tb.integer('item_id')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('item')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE');
-      tb.integer('category_id')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('category')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
     })
@@ -78,10 +67,8 @@ exports.up = function (knex) {
 exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists('tag_item')
-    .dropTableIfExists('category_item')
     .dropTableIfExists('photo')
     .dropTableIfExists('item')
     .dropTableIfExists('tag')
-    .dropTableIfExists('category')
-    .dropTableIfExists('seller_profile');
+    .dropTableIfExists('stores');
 };
