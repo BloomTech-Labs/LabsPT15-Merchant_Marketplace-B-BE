@@ -17,6 +17,29 @@ exports.up = function (knex) {
       tb.string('operating_hours', 255);
       tb.date('created_at');
     })
+    .createTable('orders', (tb) => {
+      tb.increments();
+      tb.integer('store_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('stores')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
+      tb.string('buyer_id')
+        .notNullable()
+        .references('id')
+        .inTable('profiles')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
+      tb.string('ship_to');
+      tb.string('delivery_method').notNullable();
+      tb.string('delivery_service');
+      tb.integer('shipping_cost');
+      tb.string('tracking_number');
+      tb.string('status');
+      tb.date('created_at');
+    })
     .createTable('tag', (tb) => {
       tb.increments();
       tb.string('tag_name', 255);
@@ -32,17 +55,6 @@ exports.up = function (knex) {
         .notNullable()
         .references('id')
         .inTable('profiles')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE');
-    })
-    .createTable('photo', (tb) => {
-      tb.increments();
-      tb.string('url', 255);
-      tb.integer('item_id')
-        .unsigned()
-        .notNullable()
-        .references('id')
-        .inTable('item')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
     })
@@ -67,8 +79,8 @@ exports.up = function (knex) {
 exports.down = function (knex) {
   return knex.schema
     .dropTableIfExists('tag_item')
-    .dropTableIfExists('photo')
     .dropTableIfExists('item')
     .dropTableIfExists('tag')
+    .dropTableIfExists('orders')
     .dropTableIfExists('stores');
 };
