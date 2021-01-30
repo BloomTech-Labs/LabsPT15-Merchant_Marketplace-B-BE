@@ -35,42 +35,58 @@ exports.up = function (knex) {
       tb.string('ship_to');
       tb.string('delivery_method').notNullable();
       tb.string('delivery_service');
-      tb.integer('shipping_cost');
+      tb.integer('shipping_cost').defaultTo(0);
       tb.string('tracking_number');
       tb.string('status');
       tb.date('created_at');
     })
-    .createTable('tag', (tb) => {
+    .createTable('tags', (tb) => {
       tb.increments();
       tb.string('tag_name', 255);
+      tb.date('created_at');
     })
-    .createTable('item', (tb) => {
+    .createTable('products', (tb) => {
       tb.increments();
-      tb.string('item_name', 255);
+      tb.string('name', 255);
       tb.text('description');
-      tb.integer('quantity_available').notNullable().unsigned().defaultTo(0);
-      tb.integer('price_in_cents').notNullable().unsigned();
+      tb.integer('price').notNullable().unsigned();
+      tb.integer('stock_quantity').notNullable().unsigned().defaultTo(0);
+      tb.specificType('images', 'text ARRAY');
+      tb.date('created_at');
       tb.boolean('published').notNullable().defaultTo(false);
-      tb.string('seller_profile_id')
-        .notNullable()
-        .references('id')
-        .inTable('profiles')
-        .onDelete('CASCADE')
-        .onUpdate('CASCADE');
+      tb.boolean('delivery').defaultTo(false);
+      tb.boolean('pickup').defaultTo(false);
     })
-    .createTable('tag_item', (tb) => {
-      tb.integer('item_id')
+    .createTable('orders_products', (tb) => {
+      tb.integer('order_id')
         .unsigned()
         .notNullable()
         .references('id')
-        .inTable('item')
+        .inTable('orders')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
+      tb.integer('product_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('products')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
+      tb.integer('quantity').unsigned().notNullable();
+    })
+    .createTable('products_tags', (tb) => {
+      tb.integer('product_id')
+        .unsigned()
+        .notNullable()
+        .references('id')
+        .inTable('products')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
       tb.integer('tag_id')
         .unsigned()
         .notNullable()
         .references('id')
-        .inTable('tag')
+        .inTable('tags')
         .onDelete('CASCADE')
         .onUpdate('CASCADE');
     });
@@ -78,9 +94,10 @@ exports.up = function (knex) {
 
 exports.down = function (knex) {
   return knex.schema
-    .dropTableIfExists('tag_item')
-    .dropTableIfExists('item')
-    .dropTableIfExists('tag')
+    .dropTableIfExists('products_tags')
+    .dropTableIfExists('orders_products')
+    .dropTableIfExists('products')
+    .dropTableIfExists('tags')
     .dropTableIfExists('orders')
     .dropTableIfExists('stores');
 };
