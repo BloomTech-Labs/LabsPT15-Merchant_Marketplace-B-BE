@@ -42,11 +42,17 @@ exports.up = function (knex) {
     })
     .createTable('tags', (tb) => {
       tb.increments();
-      tb.string('tag_name', 255);
+      tb.string('name', 255);
       tb.date('created_at');
     })
     .createTable('products', (tb) => {
       tb.increments();
+      tb.integer('store_id')
+        .notNullable()
+        .references('id')
+        .inTable('stores')
+        .onDelete('CASCADE')
+        .onUpdate('CASCADE');
       tb.string('name', 255);
       tb.text('description');
       tb.integer('price').notNullable().unsigned();

@@ -5,6 +5,7 @@ exports.seed = function (knex) {
   return knex('products').insert([
     {
       id: 0,
+      store_id: 0,
       name: 'Persian rug',
       price: 3400000,
       stock_quantity: 3,
@@ -19,6 +20,7 @@ exports.seed = function (knex) {
 
     {
       id: 1,
+      store_id: 0,
       name: 'Bathroom rug!',
       stock_quantity: 40,
       price: 500,
@@ -33,6 +35,7 @@ exports.seed = function (knex) {
 
     {
       id: 2,
+      store_id: 0,
       name: 'Office carpet!',
       stock_quantity: 7000,
       price: 5000,
@@ -47,6 +50,7 @@ exports.seed = function (knex) {
 
     {
       id: 3,
+      store_id: 0,
       name: 'Another Persian rug!',
       stock_quantity: 5,
       price: 4400000,
@@ -61,6 +65,7 @@ exports.seed = function (knex) {
 
     {
       id: 4,
+      store_id: 0,
       name: 'Persian rug, but better!',
       stock_quantity: 5,
       price: 4400000,
@@ -75,6 +80,7 @@ exports.seed = function (knex) {
 
     {
       id: 5,
+      store_id: 0,
       name: 'Persian rug, again',
       stock_quantity: 5,
       price: 4400000,
@@ -89,6 +95,7 @@ exports.seed = function (knex) {
 
     {
       id: 6,
+      store_id: 0,
       name: 'Persian Rug',
       stock_quantity: 5,
       price: 4400000,
@@ -103,6 +110,7 @@ exports.seed = function (knex) {
 
     {
       id: 7,
+      store_id: 0,
       name: 'Final Persian Rug',
       stock_quantity: 5,
       price: 4400000,
@@ -116,6 +124,7 @@ exports.seed = function (knex) {
 
     {
       id: 8,
+      store_id: 1,
       name: 'Hawaiian shirt',
       stock_quantity: 1,
       price: 20000,
@@ -129,6 +138,7 @@ exports.seed = function (knex) {
 
     {
       id: 9,
+      store_id: 1,
       name: 'Champagne gold, 1997 Toyota Camry',
       stock_quantity: 1,
       price: 0,
@@ -143,6 +153,7 @@ exports.seed = function (knex) {
 
     {
       id: 10,
+      store_id: 1,
       name: 'Mixed ammunition',
       stock_quantity: 90000,
       price: 100,
@@ -157,6 +168,7 @@ exports.seed = function (knex) {
 
     {
       id: 11,
+      store_id: 1,
       name: 'Book',
       stock_quantity: 1,
       price: 1000,
@@ -170,6 +182,7 @@ exports.seed = function (knex) {
 
     {
       id: 12,
+      store_id: 2,
       name: 'Rocket',
       stock_quantity: 3,
       price: 999999999,
@@ -183,6 +196,7 @@ exports.seed = function (knex) {
 
     {
       id: 13,
+      store_id: 2,
       name: 'Washington Post',
       stock_quantity: 1,
       price: 250000000,
