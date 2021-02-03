@@ -1,6 +1,6 @@
 const db = require('../../data/db-config');
 
-const findProductByID = async ({ id }) => {
+const findProductByID = async (id) => {
   return await db('products').select('*').where({ id });
 };
 
@@ -14,7 +14,7 @@ const getTagsByProductID = async (productID) => {
     .join('products_tags as pt', 'p.id', 'pt.product_id')
     .join('tags as t', 'pt.tag_id', 't.id')
     .where('pt.product_id', productID)
-    .returning('*');
+    .select('tag_id', 'product_id', 'tag_name');
 };
 
 const getProductsByTagID = async (tagID) => {
@@ -22,7 +22,7 @@ const getProductsByTagID = async (tagID) => {
     .join('products_tags as pt', 't.id', 'pt.tag_id')
     .join('products as p', 'pt.product_id', 'p.id')
     .where('pt.tag_id', tagID)
-    .returning('*');
+    .select('product_id', 'product_name');
 };
 
 module.exports = {
