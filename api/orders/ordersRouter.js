@@ -21,6 +21,20 @@ router.get('/:orderID', authRequired, async (req, res) => {
   }
 });
 
+router.get('/:orderID/products', authRequired, async (req, res) => {
+  const { orderID } = req.params;
+  const response = await Orders.getProductsByOrderID(orderID);
+  try {
+    if (response) {
+      res.status(200).json(response);
+    } else {
+      helper.notFound('orders', res);
+    }
+  } catch {
+    helper.dbError(res);
+  }
+});
+
 // POST profile can create an item
 router.post('/', authRequired, async (req, res) => {
   endpointCreator.createData('orders', req, res);

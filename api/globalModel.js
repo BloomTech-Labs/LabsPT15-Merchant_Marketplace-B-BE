@@ -12,6 +12,10 @@ const findById = async (db, id) => {
   return db(db).where({ id }).first().select('*');
 };
 
+const create = async (db, data) => {
+  return db(db).insert(data).returning('*');
+};
+
 const update = (db, id, obj) => {
   return db(db).where({ id }).first().update(obj).returning('*');
 };
@@ -36,6 +40,7 @@ module.exports = {
   findAll,
   findBy,
   findById,
+  create,
   update,
   remove,
   connectProductsAndTags,

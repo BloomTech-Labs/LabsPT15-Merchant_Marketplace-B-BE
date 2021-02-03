@@ -17,8 +17,17 @@ const getTagsByProductID = async (productID) => {
     .returning('*');
 };
 
+const getProductsByTagID = async (tagID) => {
+  return db('tags as t')
+    .join('products_tags as pt', 't.id', 'pt.tag_id')
+    .join('products as p', 'pt.product_id', 'p.id')
+    .where('pt.tag_id', tagID)
+    .returning('*');
+};
+
 module.exports = {
   findProductByID,
   createProduct,
   getTagsByProductID,
+  getProductsByTagID,
 };

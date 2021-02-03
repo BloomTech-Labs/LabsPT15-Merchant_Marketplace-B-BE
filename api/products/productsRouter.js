@@ -38,7 +38,7 @@ router.get('/:productID/tags', authRequired, async (req, res) => {
 
 router.get('/tags/:tagID', authRequired, async (req, res) => {
   const { tagID } = req.params;
-  const response = await Model.findById('tags', tagID);
+  const response = await Products.getProductsByTagID(tagID);
 
   try {
     if (response) {
