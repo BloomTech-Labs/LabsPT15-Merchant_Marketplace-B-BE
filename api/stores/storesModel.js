@@ -1,4 +1,4 @@
-const db = require('../data/db-config');
+const db = require('../../data/db-config');
 
 const findStoreByID = async ({ id }) => {
   return await db('stores').select('*').where({ id });
