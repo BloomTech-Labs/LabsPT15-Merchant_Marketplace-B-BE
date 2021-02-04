@@ -23,7 +23,7 @@ router.get('/:storeID', authRequired, async (req, res) => {
 
 router.get('/:storeID/products', authRequired, async (req, res) => {
   const { storeID } = req.params;
-  const response = await Stores.findAllProductsByStoreId(storeID);
+  const response = await Stores.findAllProductsByStoreID(storeID);
   try {
     if (response) {
       res.status(200).json(response);

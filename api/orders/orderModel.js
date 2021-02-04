@@ -1,6 +1,6 @@
 const db = require('../../data/db-config');
 
-const findOrderByID = async ({ id }) => {
+const findOrderByID = async (id) => {
   return await db('orders').select('*').where({ id });
 };
 
