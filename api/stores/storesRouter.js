@@ -47,7 +47,7 @@ router.put('/:storeId', authRequired, async (req, res) => {
   const response = await Model.update('stores', storeId, data);
   try {
     if (response) {
-      res.status(200).json(response);
+      res.status(200).json(response[0]);
     } else {
       helper.notFound('store', res);
     }
@@ -57,7 +57,7 @@ router.put('/:storeId', authRequired, async (req, res) => {
 });
 
 // DELETE profile can delete an item
-router.delete('/:storeId/', authRequired, async (req, res) => {
+router.delete('/:id', authRequired, async (req, res) => {
   endpointCreator.deleteData('stores', req, res);
 });
 

@@ -21,7 +21,7 @@ const update = (table, id, obj) => {
 };
 
 const remove = async (table, id) => {
-  return await db(table).where({ id }).del();
+  return await db(table).where({ id }).del().returning('*');
 };
 
 const connectProductsAndTags = async (productID, tagID) => {

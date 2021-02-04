@@ -4,7 +4,6 @@ exports.seed = function (knex) {
   // Inserts seed entries
   return knex('stores').insert([
     {
-      id: 0,
       owner_id: '00ulthapbErVUwVJy4x6',
       name: 'SuperStore Rug Emporium',
       description: 'Rugs, Rugs, Rugs! Discount Rugs, Fine Rugs, Bathroom Rugs!',
@@ -15,7 +14,6 @@ exports.seed = function (knex) {
       created_at: date.past(),
     },
     {
-      id: 1,
       owner_id: '00ultx74kMUmEW8054x6',
       name: 'Nicholas Mullen',
       description:
@@ -27,7 +25,6 @@ exports.seed = function (knex) {
       created_at: date.past(),
     },
     {
-      id: 2,
       owner_id: '00ultwew80Onb2vOT4x6',
       name: "Bezo's Enterprises",
       description: 'Books, Rockets, Washington News Media',
