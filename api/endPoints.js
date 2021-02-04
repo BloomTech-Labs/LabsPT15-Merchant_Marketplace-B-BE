@@ -17,11 +17,11 @@ async function createData(table, req, res) {
 }
 
 async function deleteData(table, req, res) {
-  const { productId } = req.params;
-  const response = await Model.remove(table, productId);
+  const { id } = req.params;
+  const response = await Model.remove(table, id);
   try {
     if (response) {
-      res.status(200).send(productId);
+      res.status(200).send(id);
     } else {
       helper.notFound(table, res);
     }

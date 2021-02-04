@@ -1,32 +1,50 @@
 const express = require('express');
 const authRequired = require('../middleware/authRequired');
 const Model = require('../globalModel');
+const Products = require('../products/productsModel');
 const endpointCreator = require('../endPoints');
 const helper = require('../helper');
 const router = express.Router();
-// GET items by profile ID
-router.get('/profile/:profileID/', authRequired, async (req, res) => {
-  const profileID = String(req.params.profileID);
-  const response = await Model.findItemByProfile(profileID);
+
+// get item by id
+router.get('/:productID', authRequired, async (req, res) => {
+  const { productID } = req.params;
+  const response = await Products.findProductByID(productID);
   try {
     if (response) {
       res.status(200).json(response);
     } else {
-      helper.notFound('items');
+      helper.notFound('product', res);
     }
   } catch {
-    helper.notFound(res);
+    helper.dbError(res);
   }
 });
-// get item by id
-router.get('/:itemID', authRequired, async (req, res) => {
-  const { itemID } = req.params;
-  const response = await Model.findAllProducts('item', itemID);
+
+router.get('/:productID/tags', authRequired, async (req, res) => {
+  const { productID } = req.params;
+  const response = await Products.getTagsByProductID(productID);
+
   try {
     if (response) {
       res.status(200).json(response);
     } else {
-      helper.notFound('items', res);
+      helper.notFound('product', res);
+    }
+  } catch {
+    helper.dbError(res);
+  }
+});
+
+router.get('/tags/:tagID', authRequired, async (req, res) => {
+  const { tagID } = req.params;
+  const response = await Products.getProductsByTagID(tagID);
+
+  try {
+    if (response) {
+      res.status(200).json(response);
+    } else {
+      helper.notFound('tag', res);
     }
   } catch {
     helper.dbError(res);
@@ -35,31 +53,34 @@ router.get('/:itemID', authRequired, async (req, res) => {
 
 // POST profile can create an item
 router.post('/', authRequired, async (req, res) => {
-  endpointCreator.createData('item', req, res);
+  endpointCreator.createData('products', req, res);
 });
+
 // PUT profile can edit an item
 router.put('/:productId', authRequired, async (req, res) => {
   const data = req.body;
   const { productId } = req.params;
-  const response = await Model.update('item', productId, data);
+  const response = await Model.update('products', productId, data);
   try {
     if (response) {
       res.status(200).json(response);
     } else {
-      helper.notFound('items', res);
+      helper.notFound('product', res);
     }
   } catch {
     helper.dbError(res);
   }
 });
+
 // DELETE profile can delete an item
 router.delete('/:productId/', authRequired, async (req, res) => {
-  endpointCreator.deleteData('items', req, res);
+  endpointCreator.deleteData('products', req, res);
 });
+
 //POST items and tags are connected
 router.post('/:itemID/tag/:tagID', authRequired, async (req, res) => {
   const { itemID, tagID } = req.params;
-  const response = await Model.connectItemsAndTags(itemID, tagID);
+  const response = await Model.connectProductsAndTags(itemID, tagID);
   try {
     if (response) {
       res
@@ -73,20 +94,4 @@ router.post('/:itemID/tag/:tagID', authRequired, async (req, res) => {
   }
 });
 
-//POST items and categories are connected
-router.post('/:itemID/categories/:catID', async (req, res) => {
-  const { itemID, catID } = req.params;
-  const response = await Model.connectItemsAndCategories(itemID, catID);
-  try {
-    if (response) {
-      res.status(200).json({
-        message: `You have added category: ${catID} to item: ${itemID}`,
-      });
-    } else {
-      res.status(404).json({ message: 'You cannot add this category' });
-    }
-  } catch (err) {
-    helper.dbError(res);
-  }
-});
 module.exports = router;
