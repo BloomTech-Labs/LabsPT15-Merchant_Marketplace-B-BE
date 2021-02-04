@@ -1,27 +1,27 @@
 const db = require('../data/db-config');
 
-const findAll = async (db) => {
-  return await db(db);
+const findAll = async (table) => {
+  return await db(table);
 };
 
-const findBy = (db, filter) => {
-  return db(db).where(filter);
+const findBy = (table, filter) => {
+  return db(table).where(filter);
 };
 
-const findById = async (db, id) => {
-  return db(db).where({ id }).first().select('*');
+const findById = async (table, id) => {
+  return db(table).where({ id }).first().select('*');
 };
 
-const create = async (db, data) => {
-  return db(db).insert(data).returning('*');
+const create = async (table, data) => {
+  return db(table).insert(data).returning('*');
 };
 
-const update = (db, id, obj) => {
-  return db(db).where({ id }).first().update(obj).returning('*');
+const update = (table, id, obj) => {
+  return db(table).where({ id }).first().update(obj).returning('*');
 };
 
-const remove = async (db, id) => {
-  return await db(db).where({ id }).del();
+const remove = async (table, id) => {
+  return await db(table).where({ id }).del();
 };
 
 const connectProductsAndTags = async (productID, tagID) => {
