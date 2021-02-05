@@ -26,7 +26,6 @@ const ordersRouter = require('./orders/ordersRouter');
 const productsRouter = require('./products/productsRouter');
 
 const tagRouter = require('./tag/tagRouter');
-const photoRouter = require('./photo/photoRouter');
 
 const app = express();
 
@@ -59,7 +58,6 @@ app.use(['/api/store', '/api/stores'], storeRouter);
 app.use(['/api/order', '/api/orders'], ordersRouter);
 app.use(['/api/products', '/api/products'], productsRouter);
 app.use(['/api/tag', '/api/tags'], tagRouter);
-app.use(['/api/photo', '/api/photos'], photoRouter);
 
 //catch 404 and forward to error handler
 app.use(function (req, res, next) {
