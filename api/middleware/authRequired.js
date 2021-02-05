@@ -1,7 +1,7 @@
 /*
  * This is an example of using middleware to secure routers.
  */
-const Model = require('../globalModel');
+const Profile = require('../profile/profileModel');
 const createError = require('http-errors');
 const OktaJwtVerifier = require('@okta/jwt-verifier');
 const oktaVerifierConfig = require('../../config/okta');
@@ -31,7 +31,7 @@ const authRequired = async (req, res, next) => {
       .verifyAccessToken(idToken, oktaVerifierConfig.expectedAudience)
       .then(async (data) => {
         const jwtUserObj = makeProfileObj(data.claims);
-        const profile = await Model.findOrCreate('seller_profile', jwtUserObj);
+        const profile = await Profile.findProfileByID(jwtUserObj.id);
         if (profile) {
           req.profile = profile;
         } else {
