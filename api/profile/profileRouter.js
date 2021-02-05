@@ -44,4 +44,19 @@ router.get('/:profileID/stores', authRequired, async (req, res) => {
   }
 });
 
+router.put('/:profileID', authRequired, async (req, res) => {
+  const data = req.body;
+  const { profileID } = req.params;
+  const response = await Model.update('profiles', profileID, data);
+  try {
+    if (response) {
+      res.status(200).json(response);
+    } else {
+      helper.notFound('profile', res);
+    }
+  } catch {
+    helper.dbError(res);
+  }
+});
+
 module.exports = router;

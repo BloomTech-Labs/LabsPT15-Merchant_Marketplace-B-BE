@@ -3,8 +3,7 @@ exports.seed = function (knex) {
   // Inserts seed entries
   return knex('orders').insert([
     {
-      id: 1,
-      store_id: 0,
+      store_id: 1,
       buyer_id: '00ulthapbErVUwVJy4x6',
       ship_to: faker.address.streetAddress(),
       delivery_method: 'pickup',
@@ -15,8 +14,7 @@ exports.seed = function (knex) {
       created_at: faker.date.past(),
     },
     {
-      id: 2,
-      store_id: 1,
+      store_id: 2,
       buyer_id: '00ultx74kMUmEW8054x6',
       ship_to: faker.address.streetAddress(),
       delivery_method: 'delivery',
@@ -27,8 +25,7 @@ exports.seed = function (knex) {
       created_at: faker.date.past(),
     },
     {
-      id: 3,
-      store_id: 2,
+      store_id: 3,
       buyer_id: '00ultwew80Onb2vOT4x6',
       ship_to: faker.address.streetAddress(),
       delivery_method: 'delivery',
