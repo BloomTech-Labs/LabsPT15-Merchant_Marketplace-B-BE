@@ -11,7 +11,7 @@ exports.up = function (knex) {
         .onUpdate('CASCADE');
       tb.string('name', 255).notNullable();
       tb.text('description');
-      tb.string('location', 255);
+      tb.json('location');
       tb.string('phone_number');
       tb.string('branding_image');
       tb.string('operating_hours', 255);
