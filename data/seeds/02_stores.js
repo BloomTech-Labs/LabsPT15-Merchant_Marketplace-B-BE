@@ -7,75 +7,8 @@ exports.seed = function (knex) {
       owner_id: '00ulthapbErVUwVJy4x6',
       name: 'SuperStore Rug Emporium',
       description: 'Rugs, Rugs, Rugs! Discount Rugs, Fine Rugs, Bathroom Rugs!',
-      location: {
-        address_components: [
-          { long_name: '945', short_name: '945', types: ['street_number'] },
-          {
-            long_name: 'Lombard Street',
-            short_name: 'Lombard St',
-            types: ['route'],
-          },
-          {
-            long_name: 'Russian Hill',
-            short_name: 'Russian Hill',
-            types: ['neighborhood', 'political'],
-          },
-          {
-            long_name: 'San Francisco',
-            short_name: 'SF',
-            types: ['locality', 'political'],
-          },
-          {
-            long_name: 'San Francisco County',
-            short_name: 'San Francisco County',
-            types: ['administrative_area_level_2', 'political'],
-          },
-          {
-            long_name: 'California',
-            short_name: 'CA',
-            types: ['administrative_area_level_1', 'political'],
-          },
-          {
-            long_name: 'United States',
-            short_name: 'US',
-            types: ['country', 'political'],
-          },
-          { long_name: '94133', short_name: '94133', types: ['postal_code'] },
-          {
-            long_name: '2217',
-            short_name: '2217',
-            types: ['postal_code_suffix'],
-          },
-        ],
-        adr_address:
-          '<span class="street-address">945 Lombard St</span>, <span class="locality">San Francisco</span>, <span class="region">CA</span> <span class="postal-code">94133-2217</span>, <span class="country-name">USA</span>',
-        formatted_address: '945 Lombard St, San Francisco, CA 94133, USA',
-        geometry: {
-          location: { lat: 37.801948, lng: -122.417032 },
-          viewport: {
-            south: 37.80078406970849,
-            west: -122.4184177802915,
-            north: 37.80348203029149,
-            east: -122.4157198197085,
-          },
-        },
-        icon:
-          'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png',
-        name: '945 Lombard St',
-        place_id: 'ChIJu6a38uWAhYAReuQWfAB14zY',
-        plus_code: {
-          compound_code: 'RH2M+Q5 Russian Hill, San Francisco, CA, USA',
-          global_code: '849VRH2M+Q5',
-        },
-        reference: 'ChIJu6a38uWAhYAReuQWfAB14zY',
-        types: ['street_address'],
-        url:
-          'https://maps.google.com/?q=945+Lombard+St,+San+Francisco,+CA+94133,+USA&ftid=0x808580e5f2b7a6bb:0x36e375007c16e47a',
-        utc_offset: -480,
-        vicinity: 'San Francisco',
-        html_attributions: [],
-        utc_offset_minutes: -480,
-      },
+      location:
+        '{"address_components":[{"long_name":"Texas","short_name":"TX","types":["administrative_area_level_1","political"]},{"long_name":"United States","short_name":"US","types":["country","political"]}],"adr_address":"<span class=\\"region\\">Texas</span>, <span class=\\"country-name\\">USA</span>","formatted_address":"Texas, USA","geometry":{"location":{"lat":31.9685988,"lng":-99.9018131},"viewport":{"south":25.83716382247838,"west":-106.6456460547471,"north":36.5018863304334,"east":-93.50803894473373}},"icon":"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png","name":"Texas","photos":[{"height":397,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/107194906143585744682\\">vito parrino</a>"],"width":720},{"height":720,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/109563403909369877892\\">Manfred White</a>"],"width":960},{"height":442,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/104494000466617447205\\">Manju Gupta</a>"],"width":579},{"height":425,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/112162357424770771000\\">chris kerfoot</a>"],"width":640},{"height":359,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/109079572979811385219\\">Juan Montalvo</a>"],"width":1080},{"height":1080,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/115951848734333075691\\">Anna Keefer</a>"],"width":1080},{"height":3632,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/114236512652116370894\\">10kmogo</a>"],"width":13122},{"height":1365,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/102363689526225583090\\">Victor Martin</a>"],"width":2048},{"height":409,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/106214378283039211729\\">AMMAR DURAK 《BosnianLion》</a>"],"width":722},{"height":3012,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/102804958711185120409\\">Maria Chaidez</a>"],"width":2850}],"place_id":"ChIJSTKCCzZwQIYRPN4IGI8c6xY","reference":"ChIJSTKCCzZwQIYRPN4IGI8c6xY","types":["administrative_area_level_1","political"],"url":"https://maps.google.com/?q=Texas,+USA&ftid=0x864070360b823249:0x16eb1c8f1808de3c","utc_offset":-360,"website":"http://www.texas.gov/","html_attributions":[],"utc_offset_minutes":-360}',
       phone_number: 5554443333,
       branding_image: '',
       operating_hours: '',
@@ -86,61 +19,8 @@ exports.seed = function (knex) {
       name: 'Nicholas Mullen',
       description:
         'Selling my personal Junk: Hawaiian shirts, mixed ammunition, unmatched fine china.',
-      location: {
-        address_components: [
-          {
-            long_name: 'San Diego Avenue',
-            short_name: 'San Diego Ave',
-            types: ['route'],
-          },
-          {
-            long_name: 'San Diego',
-            short_name: 'San Diego',
-            types: ['locality', 'political'],
-          },
-          {
-            long_name: 'San Diego County',
-            short_name: 'San Diego County',
-            types: ['administrative_area_level_2', 'political'],
-          },
-          {
-            long_name: 'California',
-            short_name: 'CA',
-            types: ['administrative_area_level_1', 'political'],
-          },
-          {
-            long_name: 'United States',
-            short_name: 'US',
-            types: ['country', 'political'],
-          },
-        ],
-        adr_address:
-          '<span class="street-address">San Diego Ave</span>, <span class="locality">San Diego</span>, <span class="region">CA</span>, <span class="country-name">USA</span>',
-        formatted_address: 'San Diego Ave, San Diego, CA, USA',
-        geometry: {
-          location: { lat: 32.7477893, lng: -117.1913686 },
-          viewport: {
-            south: 32.7464403197085,
-            west: -117.1927175802915,
-            north: 32.7491382802915,
-            east: -117.1900196197085,
-          },
-        },
-        icon:
-          'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png',
-        name: 'San Diego Avenue',
-        place_id:
-          'EiFTYW4gRGllZ28gQXZlLCBTYW4gRGllZ28sIENBLCBVU0EiLiosChQKEgkTisMRJ6vegBEFR2wzou6mBBIUChIJSx6SrQ9T2YARed8V_f0hOg0',
-        reference:
-          'EiFTYW4gRGllZ28gQXZlLCBTYW4gRGllZ28sIENBLCBVU0EiLiosChQKEgkTisMRJ6vegBEFR2wzou6mBBIUChIJSx6SrQ9T2YARed8V_f0hOg0',
-        types: ['route'],
-        url:
-          'https://maps.google.com/?q=San+Diego+Ave,+San+Diego,+CA,+USA&ftid=0x80deab2711c38a13:0x4a6eea2336c4705',
-        utc_offset: -480,
-        vicinity: 'San Diego',
-        html_attributions: [],
-        utc_offset_minutes: -480,
-      },
+      location:
+        '{"address_components":[{"long_name":"San Francisco","short_name":"SF","types":["locality","political"]},{"long_name":"San Francisco County","short_name":"San Francisco County","types":["administrative_area_level_2","political"]},{"long_name":"California","short_name":"CA","types":["administrative_area_level_1","political"]},{"long_name":"United States","short_name":"US","types":["country","political"]}],"adr_address":"<span class=\\"locality\\">San Francisco</span>, <span class=\\"region\\">CA</span>, <span class=\\"country-name\\">USA</span>","formatted_address":"San Francisco, CA, USA","geometry":{"location":{"lat":37.7749295,"lng":-122.4194155},"viewport":{"south":37.70339999999999,"west":-122.527,"north":37.812,"east":-122.3482}},"icon":"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png","name":"San Francisco","photos":[{"height":524,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/102932235034573081280\\">Tianna Harrington</a>"],"width":1024},{"height":1216,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/109849026903893201606\\">Jayasimha Nuggehalli</a>"],"width":2585},{"height":409,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/108239778805830706312\\">Alhadi Abdullah</a>"],"width":612},{"height":3456,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/109119195811192368344\\">biswajit das</a>"],"width":4608},{"height":3024,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/113729709109639303904\\">tal avinari</a>"],"width":4032},{"height":4032,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/110080774802209804009\\">Esteban Llop</a>"],"width":3024},{"height":4048,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/116107213793470421945\\">Alex Povolotski</a>"],"width":3036},{"height":639,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/112120458874292923902\\">David Bastidas Vargas</a>"],"width":960},{"height":3264,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/104101878984964242507\\">Henning Gieseke</a>"],"width":2448},{"height":1920,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/112361167701064374233\\">Jishwaan Rakupathi</a>"],"width":2160}],"place_id":"ChIJIQBpAG2ahYAR_6128GcTUEo","reference":"ChIJIQBpAG2ahYAR_6128GcTUEo","types":["locality","political"],"url":"https://maps.google.com/?q=San+Francisco,+CA,+USA&ftid=0x80859a6d00690021:0x4a501367f076adff","utc_offset":-480,"vicinity":"San Francisco","website":"http://sfgov.org/","html_attributions":[],"utc_offset_minutes":-480}',
       phone_number: 5551234567,
       branding_image: '',
       operating_hours: '',
@@ -150,68 +30,8 @@ exports.seed = function (knex) {
       owner_id: '00ultwew80Onb2vOT4x6',
       name: "Bezo's Enterprises",
       description: 'Books, Rockets, Washington News Media',
-      location: {
-        address_components: [
-          { long_name: '446', short_name: '446', types: ['street_number'] },
-          {
-            long_name: 'South Los Angeles Street',
-            short_name: 'S Los Angeles St',
-            types: ['route'],
-          },
-          {
-            long_name: 'Downtown Los Angeles',
-            short_name: 'Downtown Los Angeles',
-            types: ['neighborhood', 'political'],
-          },
-          {
-            long_name: 'Los Angeles',
-            short_name: 'Los Angeles',
-            types: ['locality', 'political'],
-          },
-          {
-            long_name: 'Los Angeles County',
-            short_name: 'Los Angeles County',
-            types: ['administrative_area_level_2', 'political'],
-          },
-          {
-            long_name: 'California',
-            short_name: 'CA',
-            types: ['administrative_area_level_1', 'political'],
-          },
-          {
-            long_name: 'United States',
-            short_name: 'US',
-            types: ['country', 'political'],
-          },
-          { long_name: '90013', short_name: '90013', types: ['postal_code'] },
-        ],
-        adr_address:
-          '<span class="street-address">446 S Los Angeles St</span>, <span class="locality">Los Angeles</span>, <span class="region">CA</span> <span class="postal-code">90013</span>, <span class="country-name">USA</span>',
-        formatted_address: '446 S Los Angeles St, Los Angeles, CA 90013, USA',
-        geometry: {
-          location: { lat: 34.04609440000001, lng: -118.2471536 },
-          viewport: {
-            south: 34.0448251697085,
-            west: -118.2486212302915,
-            north: 34.0475231302915,
-            east: -118.2459232697085,
-          },
-        },
-        icon:
-          'https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png',
-        name: '446 S Los Angeles St',
-        place_id:
-          'EjA0NDYgUyBMb3MgQW5nZWxlcyBTdCwgTG9zIEFuZ2VsZXMsIENBIDkwMDEzLCBVU0EiMRIvChQKEgmnVh76NcbCgBEr2qqfv_lwShC-AyoUChIJu7YNmMzHwoARN4vu7ftWMRw',
-        reference:
-          'EjA0NDYgUyBMb3MgQW5nZWxlcyBTdCwgTG9zIEFuZ2VsZXMsIENBIDkwMDEzLCBVU0EiMRIvChQKEgmnVh76NcbCgBEr2qqfv_lwShC-AyoUChIJu7YNmMzHwoARN4vu7ftWMRw',
-        types: ['street_address'],
-        url:
-          'https://maps.google.com/?q=446+S+Los+Angeles+St,+Los+Angeles,+CA+90013,+USA&ftid=0x80c2c635fa1e56a7:0x95c957a03ead5c33',
-        utc_offset: -480,
-        vicinity: 'Los Angeles',
-        html_attributions: [],
-        utc_offset_minutes: -480,
-      },
+      location:
+        '{"address_components":[{"long_name":"San Diego","short_name":"San Diego","types":["locality","political"]},{"long_name":"San Diego County","short_name":"San Diego County","types":["administrative_area_level_2","political"]},{"long_name":"California","short_name":"CA","types":["administrative_area_level_1","political"]},{"long_name":"United States","short_name":"US","types":["country","political"]}],"adr_address":"<span class=\\"locality\\">San Diego</span>, <span class=\\"region\\">CA</span>, <span class=\\"country-name\\">USA</span>","formatted_address":"San Diego, CA, USA","geometry":{"location":{"lat":32.715738,"lng":-117.1610838},"viewport":{"south":32.534855982486,"west":-117.3097969462756,"north":33.11424900445905,"east":-116.9081599711481}},"icon":"https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/geocode-71.png","name":"San Diego","photos":[{"height":438,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/105770721662647844350\\">Abdulrahman Iskandar</a>"],"width":701},{"height":1080,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/109824977632885959955\\">Iván Iñiguez</a>"],"width":2224},{"height":2448,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/100698301705112730067\\">Brendon Smith</a>"],"width":3264},{"height":2268,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/109529393223081646709\\">Gina M</a>"],"width":4032},{"height":4032,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/115147565583143665725\\">Sandeep Prakash</a>"],"width":3024},{"height":3456,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/110918361183207780301\\">Adam Buckley</a>"],"width":4608},{"height":1152,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/106348294456911121741\\">Carlos Vaca</a>"],"width":2048},{"height":637,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/113133419939054207449\\">Seaport Village</a>"],"width":957},{"height":288,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/111468564568606018646\\">Dmitriy Buzhenko</a>"],"width":384},{"height":2268,"html_attributions":["<a href=\\"https://maps.google.com/maps/contrib/108585990248449648871\\">Ben C</a>"],"width":4032}],"place_id":"ChIJSx6SrQ9T2YARed8V_f0hOg0","reference":"ChIJSx6SrQ9T2YARed8V_f0hOg0","types":["locality","political"],"url":"https://maps.google.com/?q=San+Diego,+CA,+USA&ftid=0x80d9530fad921e4b:0xd3a21fdfd15df79","utc_offset":-480,"vicinity":"San Diego","website":"http://www.sandiego.gov/","html_attributions":[],"utc_offset_minutes":-480}',
       phone_number: 5559876543,
       branding_image: '',
       operating_hours: '',
