@@ -24,6 +24,7 @@ const profileRouter = require('./profile/profileRouter');
 const storeRouter = require('./stores/storesRouter');
 const ordersRouter = require('./orders/ordersRouter');
 const productsRouter = require('./products/productsRouter');
+const sign_s3 = require('./sign_s3/sign_s3');
 
 const tagRouter = require('./tag/tagRouter');
 
@@ -53,6 +54,7 @@ app.use(cookieParser());
 
 // application routes
 app.use('/api', indexRouter);
+app.use('/api/sign_s3', sign_s3);
 app.use(['/api/profile', '/api/profiles'], profileRouter);
 app.use(['/api/store', '/api/stores'], storeRouter);
 app.use(['/api/order', '/api/orders'], ordersRouter);

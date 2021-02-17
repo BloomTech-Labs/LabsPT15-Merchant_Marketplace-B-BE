@@ -11,7 +11,7 @@ exports.seed = function (knex) {
       shipping_cost: 0,
       tracking_number: '',
       status: '',
-      created_at: faker.date.past(),
+      created_at: 1613414161,
     },
     {
       store_id: 2,
@@ -22,7 +22,7 @@ exports.seed = function (knex) {
       shipping_cost: 1234,
       tracking_number: 'sald;ssssss',
       status: 'notShipped',
-      created_at: faker.date.past(),
+      created_at: 1613414161,
     },
     {
       store_id: 3,
@@ -33,7 +33,7 @@ exports.seed = function (knex) {
       shipping_cost: 1000,
       tracking_number: '098374023987450fkjfjlk',
       status: 'shipped',
-      created_at: faker.date.past(),
+      created_at: 1613414161,
     },
   ]);
 };

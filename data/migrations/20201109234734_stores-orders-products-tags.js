@@ -13,9 +13,9 @@ exports.up = function (knex) {
       tb.text('description');
       tb.string('location', 3000);
       tb.string('phone_number');
-      tb.string('branding_image');
+      tb.specificType('images', 'text ARRAY');
       tb.string('operating_hours', 255);
-      tb.date('created_at');
+      tb.integer('created_at').unsigned();
     })
     .createTable('orders', (tb) => {
       tb.increments();
@@ -38,12 +38,12 @@ exports.up = function (knex) {
       tb.integer('shipping_cost').defaultTo(0);
       tb.string('tracking_number');
       tb.string('status');
-      tb.date('created_at');
+      tb.integer('created_at').unsigned();
     })
     .createTable('tags', (tb) => {
       tb.increments();
       tb.string('name', 255);
-      tb.date('created_at');
+      tb.integer('created_at').unsigned();
     })
     .createTable('products', (tb) => {
       tb.increments();
@@ -58,7 +58,7 @@ exports.up = function (knex) {
       tb.integer('price').notNullable().unsigned();
       tb.integer('stock_quantity').notNullable().unsigned().defaultTo(0);
       tb.specificType('images', 'text ARRAY');
-      tb.date('created_at');
+      tb.integer('created_at').unsigned();
       tb.boolean('published').notNullable().defaultTo(false);
       tb.boolean('delivery').defaultTo(false);
       tb.boolean('pickup').defaultTo(false);
