@@ -11,7 +11,7 @@ router.get('/:productID', authRequired, async (req, res) => {
   const { productID } = req.params;
   const response = await Products.findProductByID(productID);
   try {
-    if (response) {
+    if (response.length) {
       res.status(200).json(response);
     } else {
       helper.notFound('product', res);
