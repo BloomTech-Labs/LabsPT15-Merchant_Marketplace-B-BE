@@ -1,5 +1,3 @@
-const { date } = require('faker');
-
 exports.seed = function (knex) {
   // Inserts seed entries
   return knex('products').insert([
@@ -11,7 +9,7 @@ exports.seed = function (knex) {
       description:
         'Fancy rug! Great pattern! Perfect for living room, wall or sauna!',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -25,7 +23,7 @@ exports.seed = function (knex) {
       description:
         'Bathroom rug! Keep your feet from touching cold tile. Complete garbage!',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -39,7 +37,7 @@ exports.seed = function (knex) {
       description:
         'Colorless office carpeting! Stain resistant and optically offensive!',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -53,7 +51,7 @@ exports.seed = function (knex) {
       description:
         'Fancy rug! Great pattern! Perfect for living room, wall or sauna!',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -67,7 +65,7 @@ exports.seed = function (knex) {
       description:
         'Fancy rug! Great pattern! Perfect for living room, wall or sauna!',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -81,7 +79,7 @@ exports.seed = function (knex) {
       description:
         'Fancy rug! Great pattern! Perfect for living room, wall or sauna!',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -95,7 +93,7 @@ exports.seed = function (knex) {
       description: 'Are we serious with all of these persion rugs? Yes we are!',
       published: true,
 
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -108,7 +106,7 @@ exports.seed = function (knex) {
       price: 4400000,
       description: 'Are we serious with all of these persion rugs? Yes we are!',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -121,7 +119,7 @@ exports.seed = function (knex) {
       price: 20000,
       description: 'Casual but stylish. Excellent for unwanted office jobs.',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -135,7 +133,7 @@ exports.seed = function (knex) {
       description:
         'Just take it off my hands. Totally reliable and unblievably unsightly.',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -149,7 +147,7 @@ exports.seed = function (knex) {
       description:
         'Loads of the stuff! Buy in boxes, buckets, pallets! Prepare for the Apocalypse.',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -162,7 +160,7 @@ exports.seed = function (knex) {
       price: 1000,
       description: 'Paperback. Like new. Subject unknown.',
       published: false,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -175,7 +173,7 @@ exports.seed = function (knex) {
       price: 999999999,
       description: "Cool, but it doesn't go as high as Elon's.",
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
@@ -189,7 +187,7 @@ exports.seed = function (knex) {
       description:
         'Gold plate your reputation and legacy! Gain political capital! Slander your enemies!',
       published: true,
-      created_at: date.past(),
+      created_at: 1613500561,
       delivery: false,
       pickup: false,
       images: [],
