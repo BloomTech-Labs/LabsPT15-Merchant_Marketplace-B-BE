@@ -3,7 +3,7 @@ module.exports = {
     openapi: '3.0.1',
     info: {
       title: 'Merchant Marketplace',
-      version: '0.1.0',
+      version: '0.2.0',
       description: 'merchant-marketplace',
       license: {
         name: 'MIT',
@@ -18,6 +18,10 @@ module.exports = {
       {
         name: 'profile',
         description: 'Operations for profile',
+      },
+      {
+        name: 'store',
+        description: 'Operations for store',
       },
     ],
     components: {
@@ -55,5 +59,5 @@ module.exports = {
       },
     },
   },
-  apis: ['./api/**/*Router.js'],
+  apis: ['./api/**/*RouterDocs.js'],
 };
