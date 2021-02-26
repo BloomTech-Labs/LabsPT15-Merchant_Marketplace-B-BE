@@ -10,20 +10,7 @@ module.exports = {
         url: 'https://en.wikipedia.org/wiki/MIT_License',
       },
     },
-    tags: [
-      {
-        name: 'status',
-        description: 'Everything about your status',
-      },
-      {
-        name: 'profile',
-        description: 'Operations for profile',
-      },
-      {
-        name: 'store',
-        description: 'Operations for store',
-      },
-    ],
+    tags: [],
     components: {
       securitySchemes: {
         okta: {
@@ -59,5 +46,5 @@ module.exports = {
       },
     },
   },
-  apis: ['./api/**/*RouterDocs.js'],
+  apis: ['./api/*/*.yaml'],
 };

@@ -1,0 +1,314 @@
+---
+swagger: "2.0"
+info:
+  description: Products Router
+  version: "0.1"
+  title: Products Router
+paths:
+  /api/products/:productid:
+    get:
+      produces:
+      - application/json
+      parameters: []
+      responses:
+        "200":
+          description: Gets Product by id
+          schema:
+            $ref: '#/definitions/Model3'
+      security:
+      - Secured: []
+  /api/products/:
+    post:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model0'
+        x-examples:
+          application/json: |-
+            {
+                    "store_id": 2,
+                    "name": "Another Hand Bag",
+                    "description": "Made out of hair",
+                    "price": 700,
+                    "stock_quantity": 70,
+                    "images": [],
+                    "published": true,
+                    "delivery": true,
+                    "pickup": false
+                }
+      responses:
+        "201":
+          description: Add a product
+          schema:
+            $ref: '#/definitions/Model4'
+      security:
+      - Secured: []
+  /api/products/:productId:
+    put:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model1'
+        x-examples:
+          application/json: |-
+            {
+                    "store_id": 2,
+                    "name": "Rndom thing I dont need",
+                    "description": "Made out of anger",
+                    "price": 333,
+                    "stock_quantity": 32,
+                    "images": [],
+                    "published": true,
+                    "delivery": true,
+                    "pickup": false
+                }
+      responses:
+        "200":
+          description: Edit a product
+          schema:
+            $ref: '#/definitions/Model5'
+      security:
+      - Secured: []
+    delete:
+      consumes:
+      - application/json
+      produces:
+      - application/json
+      parameters:
+      - in: body
+        name: body
+        required: false
+        schema:
+          $ref: '#/definitions/Model2'
+        x-examples:
+          application/json: |-
+            {
+                    "store_id": 2,
+                    "name": "Rndom thing I dont need",
+                    "description": "Made out of anger",
+                    "price": 333,
+                    "stock_quantity": 32,
+                    "images": [],
+                    "published": true,
+                    "delivery": true,
+                    "pickup": false
+                }
+      responses:
+        "200":
+          description: Delete a product
+          schema:
+            $ref: '#/definitions/Model6'
+      security:
+      - Secured: []
+securityDefinitions:
+  Secured:
+    type: oauth2
+    authorizationUrl: https://example.com
+    flow: implicit
+    scopes: {}
+definitions:
+  Model0:
+    properties:
+      store_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: integer
+        format: int32
+      stock_quantity:
+        type: integer
+        format: int32
+      images:
+        type: array
+      published:
+        type: boolean
+      delivery:
+        type: boolean
+      pickup:
+        type: boolean
+  Model1:
+    properties:
+      store_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: integer
+        format: int32
+      stock_quantity:
+        type: integer
+        format: int32
+      images:
+        type: array
+      published:
+        type: boolean
+      delivery:
+        type: boolean
+      pickup:
+        type: boolean
+  Model2:
+    properties:
+      store_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: integer
+        format: int32
+      stock_quantity:
+        type: integer
+        format: int32
+      images:
+        type: array
+      published:
+        type: boolean
+      delivery:
+        type: boolean
+      pickup:
+        type: boolean
+  Array:
+    properties:
+      id:
+        type: integer
+        format: int32
+      store_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: integer
+        format: int32
+      stock_quantity:
+        type: integer
+        format: int32
+      images:
+        type: array
+      created_at:
+        type: integer
+        format: int32
+      published:
+        type: boolean
+      delivery:
+        type: boolean
+      pickup:
+        type: boolean
+  Model3:
+    type: array
+    items:
+      $ref: '#/definitions/Array'
+  Model4:
+    properties:
+      id:
+        type: integer
+        format: int32
+      store_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: integer
+        format: int32
+      stock_quantity:
+        type: integer
+        format: int32
+      images:
+        type: array
+      created_at:
+        type: object
+        properties: {}
+      published:
+        type: boolean
+      delivery:
+        type: boolean
+      pickup:
+        type: boolean
+  Model5_Array:
+    properties:
+      id:
+        type: integer
+        format: int32
+      store_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: integer
+        format: int32
+      stock_quantity:
+        type: integer
+        format: int32
+      images:
+        type: array
+      created_at:
+        type: object
+        properties: {}
+      published:
+        type: boolean
+      delivery:
+        type: boolean
+      pickup:
+        type: boolean
+  Model5:
+    type: array
+    items:
+      $ref: '#/definitions/Model5_Array'
+  Model6:
+    properties:
+      id:
+        type: integer
+        format: int32
+      store_id:
+        type: integer
+        format: int32
+      name:
+        type: string
+      description:
+        type: string
+      price:
+        type: integer
+        format: int32
+      stock_quantity:
+        type: integer
+        format: int32
+      images:
+        type: array
+      created_at:
+        type: object
+        properties: {}
+      published:
+        type: boolean
+      delivery:
+        type: boolean
+      pickup:
+        type: boolean
