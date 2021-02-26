@@ -23,6 +23,10 @@ module.exports = {
         name: 'store',
         description: 'Operations for store',
       },
+      {
+        name: 'products',
+        description: 'Operations for products',
+      },
     ],
     components: {
       securitySchemes: {

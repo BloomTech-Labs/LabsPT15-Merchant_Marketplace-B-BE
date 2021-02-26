@@ -2,33 +2,6 @@
  * @swagger
  *
  * /store:
- *  get:
- *    description: Returns a list of stores
- *    summary: Get a list of all stores
- *    security:
- *      - okta: []
- *    tags:
- *      - store
- *    responses:
- *      200:
- *        description: array of stores
- *        content:
- *          application/json:
- *            schema:
- *              type: array
- *              example:
- *                - owner_id: '00ulthapbErVUwVJy4x6'
- *                  name: 'SuperStore Rug Emporium'
- *                  description: 'Rugs, Rugs, Rugs! Discount Rugs, Fine Rugs, Bathroom Rugs!'
- *                  location: 'geoJSON object'
- *                  phone_number: 5554443333
- *                  images: []
- *                  operating_hours: ''
- *                  created_at: 1613414161
- *      401:
- *        $ref: '#/components/responses/UnauthorizedError'
- *      403:
- *        $ref: '#/components/responses/UnauthorizedError'
  *
  *  post:
  *    description: Create a store
@@ -160,6 +133,17 @@
  *                  description: 'Fancy Rug! Great Pattern!'
  *                  price: 3400000
  *                  stock_quantity: 3
+ *                  images: []
+ *                  created_at: 1613414161
+ *                  published: true
+ *                  delivery: false
+ *                  pickup: true
+ *                - id: 2
+ *                  store_id: 1
+ *                  name: 'Bathroom Rug'
+ *                  description: 'Bathroom Rug! Great Pattern!'
+ *                  price: 500
+ *                  stock_quantity: 40
  *                  images: []
  *                  created_at: 1613414161
  *                  published: true

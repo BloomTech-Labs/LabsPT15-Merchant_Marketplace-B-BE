@@ -14,10 +14,10 @@
  *          application/json:
  *            schema:
  *              type: object
- *              required:
- *                - api
  *              properties:
  *                api:
- *                  type: boolean
- *                  example: true
+ *                 example: 'up'
+ *                timestamp:
+ *                  type: number
+ *                  example: 1614310904556
  */
