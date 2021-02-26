@@ -3,23 +3,14 @@ module.exports = {
     openapi: '3.0.1',
     info: {
       title: 'Merchant Marketplace',
-      version: '0.1.0',
+      version: '0.2.0',
       description: 'merchant-marketplace',
       license: {
         name: 'MIT',
         url: 'https://en.wikipedia.org/wiki/MIT_License',
       },
     },
-    tags: [
-      {
-        name: 'status',
-        description: 'Everything about your status',
-      },
-      {
-        name: 'profile',
-        description: 'Operations for profile',
-      },
-    ],
+    tags: [],
     components: {
       securitySchemes: {
         okta: {
@@ -55,5 +46,5 @@ module.exports = {
       },
     },
   },
-  apis: ['./api/**/*Router.js'],
+  apis: ['./api/*/*.yaml'],
 };
